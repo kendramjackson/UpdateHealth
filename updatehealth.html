@@ -1,11 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
-<title>Insurance plan matcher</title>
-</head>
+    <meta charset="UTF-8">
+    <title> Health Insurance</title>
+
 <body>
-<h1>Yuh</h1>
-<p>This page is a sample page for a Hello World Azure Static Website Template. The page contains an HTML validation warning. 
-Can you find and fix that warning?</p>
+    <img align="right" src="bmi.jpg" style="width: 350px;">
+    <img align="right">
+    </body>.
+</head>
+<style type="text/css">
+    body {
+        text-align: center;
+        font-family: Tahoma;
+        background-color: #bcd4e6;
+    }
+</style>
+
+
+
+
+<body>
+    <h1> Health Insurance Matcher</h1> 
+    <p>Here are the rules answer the folllowing questions by selecting an option and then click calculate compatibility!</p>
+    <label> How old are you</label><br />
+    <select id="q1">
+        <option value="0">30 years old or younger</option>
+        <option value="10">45 years old or younger</option>
+        <option value="20">60 years old or younger</option>
+        <option value="30">Older than 61</option>
+    </select>
+    <br /><br />
+
+    <label> What is your systolic and diastolic blood pressure</label><br />
+    <select id="q2">
+        <option value="0">Systolic is less than 120 & Diastolic is less than 80</option>
+        <option value="15">Systolic is between 120-129 & Diastolic is less than 80</option>
+        <option value="30">Systolic is between 130-139 or Diastolic is between 80-89</option>
+        <option value="75">Systolic is 140 or higher or Diastolic is 90 or higher </option>
+        <option value="100">Systolic is higher than 180 and/or Diastolic is higher than 120</option>
+    </select>
+    <br /><br />
+
+
+    <label> Do you have a family history of diabetes, cancer, or Alzeheimer's</label><br />
+    <select id="q3">
+        <option value="30">Yes, all three</option>
+        <option value="20">Yes, but only two</option>
+        <option value="10">Yes, but only one</option>
+        <option value="0">No, I do not have a family history of any of these diseases</option>
+    </select>
+    <br /><br />
+
+    <label> What did your BMI fall under</label><br />
+    <select id="q4">
+        <option value="30">Underweight</option>
+        <option value="0">Healthy Weight</option>
+        <option value="30">Overweight</option>
+        <option value="75">Obsese</option>
+    </select>
+
+
+    <br /><br />
+
+
+    <button onclick="calculateRisk()">Calculate Risk</button>
+    <p id="calculateRisk"></p>
+
+
+<script>
+
+function calculateRisk(){
+    
+
+
+let question1Response = document.getElementById("q1").selectedOptions[0].value;
+
+console.log("Total Points:");
+console.log(document.getElementById("q1").selectedOptions[0].text);
+console.log(question1Response);
+
+let question2Response = document.getElementById("q2").selectedOptions[0].value;
+
+console.log("Total Points:");
+console.log(document.getElementById("q2").selectedOptions[0].text);
+console.log(question2Response);
+
+
+let question3Response = document.getElementById("q3").selectedOptions[0].value;
+
+console.log("Total Points:");
+console.log(document.getElementById("q3").selectedOptions[0].text);
+console.log(question3Response);
+
+let question4Response = document.getElementById("q4").selectedOptions[0].value;
+
+console.log("Total Points:");
+console.log(document.getElementById("q4").selectedOptions[0].text);
+console.log(question3Response);
+
+
+var totalRisk = (+question1Response) + (+question2Response) + (+question3Response) + (+question4Response);
+console.log("tRisk="+ totalRisk);
+}
+
+
+//<button onclick="calculateRisk()">Calculate Risk</button>
+
+//if (totalRisk < "20"){
+//    <input type="button" onclick="window.location.href = 'https://google.com';" value="Click here"/>
+//}
+
+    
+
+
+</script>
+
 </body>
 </html>
